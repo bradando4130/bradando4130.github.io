@@ -1,0 +1,12 @@
+// Grid layout
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) ;
+    grid-template-rows: auto;
+}
+
+.card-project {
+    grid-column: 1 / span 3;
+    
+}

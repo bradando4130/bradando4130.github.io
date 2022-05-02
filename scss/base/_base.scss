@@ -3,3 +3,163 @@
 * {
     font-family: 'Noto Sans', sans-serif; 
 }
+
+// Body Styles
+
+h1, 
+h2 {
+    color: $heading-colour;
+}
+
+
+main {
+    margin: 0 auto;
+    max-width: 1280px;
+    justify-content: center;
+    padding: 0 8%;
+}
+
+body {
+    background-color: $page-background;
+}
+
+
+// Header Styles
+
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 10rem 0;
+}
+
+    h1 {
+    font-size: 3rem;
+    margin: .2rem;
+}
+
+.profile-pic {
+    margin-top: 2rem;
+    border-radius: 50%;
+    height: 175px;
+    width: 175px;
+}
+
+// Main Article Section Styles
+
+section {
+    margin-bottom: 4rem;
+}
+
+.card-project {
+    margin-top: 1rem;
+    border: 1px solid red;
+}
+
+
+// Skills Styles
+
+.skills-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    .skills-item {
+        margin: .5rem;
+        align-items: center;
+        text-align: center;
+        list-style-type: none;
+        width: 45%;
+    }
+}
+
+// Nav Styles
+
+.nav {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: $navbar-colour;
+    padding: .3rem;
+
+    a {
+        text-decoration: none;
+        color: $heading-colour;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: .4rem auto;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        text-align: center;
+        padding: .3rem 1rem;
+    }
+}
+
+
+// Media Queries
+
+@media screen and (min-width: 600px) {
+    // Nav
+    .nav {
+        justify-content: right;
+
+        ul {
+            padding-right: 1rem;
+            margin: .4rem;
+        }
+    }
+
+    // Header 
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    // Skills List
+    .skills-list {
+
+        .skills-item {
+            width: 25%;
+        }
+    }
+    
+    // Main Article Section Styles
+    .main-content {
+        margin-top: 6em;
+    }
+
+    section {
+        margin: 0 auto 5rem auto;
+    }
+
+    .card-text {
+        max-width: 80%;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+ // Skills List
+ .skills-list {
+
+    .skills-item {
+        width: 12.5%;
+    }
+}
+
+
+
+
+}

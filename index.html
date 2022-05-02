@@ -10,26 +10,112 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Brad Anderson</h1>
-				<p>Portfolio in progress, come back soon!</p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
+
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="/cv">CV</a></li>
+			</ul>
+		</nav> <!-- /nav -->
+
+		<main>
+    		
+			<header class="header">
+				<h1>Brad Anderson</h1>
+				<p>Aspiring Web Developer based out of Melbourne, Australia.</p>
+				<img class="profile-pic" src="img/bradglassescrop1.jpg" alt="Brad Anderson">
+			</header><!-- /header -->
+
+			<section class="about" id="about">
+				<h2>About</h2>
+					<h3>A little about myself</h3>
+						<p>I'm a lifelong learner, and curious by nature. After stumbling across Web Development around a year and a half ago, it has been my main outlet for learning and self discovery. I really enjoy the interplay between technical and design to build bespoke solutions</p>
+						<p>Firm believer in the idea that sharing knowledge makes the world a better place</p>
+						<p>Outside of the web I enjoy cooking, gardening, entertaining my cats and video games</p>
+			</section>
+
+			<section class="skills">
+				<h2>Skills and Technologies I have experience in</h2>
+				<ul class="skills-list">
+					<li class="skills-item">HTML5</li>
+					<li class="skills-item">CSS3</li>
+					<li class="skills-item">SASS</li>
+					<li class="skills-item">JavsScript</li>
+					<li class="skills-item">Responsive Design</li>
+					<li class="skills-item">GitHub</li>
+					<li class="skills-item">VS Code</li>
+				</ul>
+			</section>
+
+			<section class="projects">
+
+				<div>
+					<h2>Below are some of the projects I have worked on</h2>
+				</div>
+
+				
+				<div class="card-project">
+					<h2>Modular Web Style Guide</h2>
+						<div class="card-text">
+							<h3>A custom and modular web style guide</h3>
+							<p>Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker webpage styling</p>
+							<div>
+								<a href="https://github.com/bradando4130/techdegree-project-4." target="_blank">Click here</a> to view the source code for the application, or check out the application in action <a href="https://bradando4130.github.io/Techdegree-project-4./" target="_blank">here</a>
+							</div>
+						</div>
+				</div><!-- /card-project -->
+
+				<div class="card-project">
+					<h2>WebApp Dashboard App</h2>
+						<div class="card-text">
+							<h3>An interactive web application for displaying data through SVG animations and JavaScript</h3>
+							<p>This web application uses multiple data visualisations to convey user information. Designed to be scalable through different display sizes through use of CSS grid</p>
+							<div>
+								<a href="https://github.com/bradando4130/techdegree-project-7" target="_blank">Click here</a> to view the source code for the application, or check out the application in action <a href="https://bradando4130.github.io/techdegree-project-7/" target="_blank">here</a>
+							</div>
+						</div>
+				</div><!-- /card-project -->
+
+				<div class="card-project">
+					<h2>Fetch API Employee Directory</h2>
+						<div class="card-text">
+							<h3>An application that collects and displays employee data from an external source</h3>
+							<p>Through use of the Fetch API and JavaScript, random employees are selected from a database and displayed on the page</p>
+							<div>
+								<a href="https://github.com/bradando4130/techdegree-project-8" target="_blank">Click here</a> to view the source code for the application, or check out the application in action <a href="https://bradando4130.github.io/Techdegree-project-8/" target="_blank">here</a>
+							</div>
+						</div>
+				</div><!-- /card-project -->
+
+				<div class="card-project">
+					<h2>Game Show App</h2>
+						<div class="card-text">
+							<h3>A browser version of 'Wheel of Sucess' using basic Hangman rules</h3>
+							<p>Using JavaScript to pull a random phrase from a list, the player will then click on letter tiles on the screen to try guess the phrase. results are dynamically displayed on the screen</p>
+							<div>
+								<a href="https://github.com/bradando4130/techdegree-project-6" target="_blank">Click here</a> to view the source code for the application, or check out the application in action <a href="https://bradando4130.github.io/Techdegree-project-6/" target="_blank">here</a>
+							</div>
+						</div>
+				</div><!-- /card-project -->
+			</section>
+
+			<section class="contact">
+				<h2>Contact</h2>
+					<h3>If you would like to get in touch</h3>
+			</section>
+
+		</main><!-- /main -->
+
 		<footer>
     		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
+        		<li><a href="mailto:bradando4130@gmail.com">email</a></li>
         		<li><a href="https://github.com/bradando4130">github.com/bradando4130</a></li>
 			</ul>
-		</footer>
-	</body>
+
+		</footer> <!-- /footer -->
+
+	</body> <!-- /body -->
+
 	<script src="js/app.js"></script>
 </html>
