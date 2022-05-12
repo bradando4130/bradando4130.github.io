@@ -2,59 +2,155 @@
 
 * {
     font-family: 'Noto Sans', sans-serif; 
+    color: black;
+    transition: all .3s;
 }
 
 // Body Styles
 
-h1, 
-h2 {
-    color: $heading-colour;
-}
-
-
 main {
     margin: 0 auto;
-    max-width: 1280px;
-    justify-content: center;
-    padding: 0 8%;
+    align-items: center;
+    background-color: $page-background;
 }
 
 body {
     background-color: $page-background;
 }
+ p {
+     line-height: 1.6;
+ }
 
+ h1 {
+     font-size: 3.5rem;
+ }
+
+.about-text,
+.card-text {
+    color: $secondary-text;
+}
+
+.about,
+.skills,
+.projects {
+    padding: 4rem 2.3rem;
+    border-bottom: #dddddd solid 1px;
+    box-shadow: $box-shadow;
+}
+
+a {
+    cursor: pointer;
+}
 
 // Header Styles
 
 .header {
-    text-align: center;
-    padding: 2rem 1rem;
-    margin: 10rem 0;
+    padding: 8rem 2rem 4rem;
+    border-bottom: 1px solid black;
+    background: rgb(110,144,153);
+    background: linear-gradient(163deg, rgba(110,144,153,1) 33%, rgba(232,232,232,1) 89%);
+    box-shadow: $box-shadow;
 }
 
-    h1 {
-    font-size: 3rem;
-    margin: .2rem;
+.tagline {
+    padding-bottom: 2rem;
 }
 
-.profile-pic {
-    margin-top: 2rem;
-    border-radius: 50%;
-    height: 175px;
-    width: 175px;
+.header-social {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+    column-gap: 40px;
 }
 
-// Main Article Section Styles
+.social-item {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    border-top: 1px solid black;
+    padding-top: 1rem;
 
-section {
-    margin-bottom: 4rem;
+    a {
+        display: grid;
+        cursor: pointer;
+        place-items: center;
+    }
+}
+
+.social-item:nth-child(2) {
+    grid-column-start: 2;
+}
+
+h1, 
+h2 {
+    color: $heading-colour;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+// About Section
+
+
+.about-link {
+    margin-top: 1.5rem;
+}
+
+
+// Main Project Section Styles
+
+.collapsible-btn {
+    text-decoration: underline;
+}
+
+.btn-project,
+.collapsible-btn {
+    text-decoration-thickness: .15em;
+}
+
+.collapsible-content {
+    display: none;
+}
+
+.btn-project:nth-child(1) {
+    margin-right: 1.5rem;
+}
+
+.card-text {
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+
+
+.project-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    padding-top: 1rem;
 }
 
 .card-project {
-    margin-top: 1rem;
-    border: 1px solid red;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dddddd;
 }
 
+.card-project:last-of-type {
+    border: none;
+    padding-bottom: 0;
+}
+
+.project-links {
+    padding-bottom: 2rem;
+}
 
 // Skills Styles
 
@@ -63,10 +159,9 @@ section {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0;
+    padding: 1rem 0;
 
     .skills-item {
-        margin: .5rem;
         align-items: center;
         text-align: center;
         list-style-type: none;
@@ -74,6 +169,11 @@ section {
     }
 }
 
+.skill-svg {
+    width: 120px;
+    height: 120px;
+    fill: black;
+}
 // Nav Styles
 
 .nav {
@@ -103,6 +203,83 @@ section {
         padding: .3rem 1rem;
     }
 }
+// Contact Styling
+
+.contact {
+    padding: 2rem 2rem 4rem;
+
+    p {
+        padding-bottom: 1rem;
+    }
+}
+
+.contact-social {
+    
+}
+
+.social-container {
+    margin: 0 auto;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    column-gap: 40px;
+}
+
+.email-svg {
+    width: 40px;
+    height: 40px;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+}
+
+.form-pair {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.form-label{
+    padding-bottom: .5rem;
+}
+
+.form-input {
+    border: #949494 solid 1px;
+    box-shadow: $box-shadow;
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+#message {
+    height: 154px;
+}
+
+.submit-btn {
+    color: #dddddd;
+    background-color: #333333;
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px;
+}
+// Footer Styling
+
+.footer { 
+    border-top: 1px solid black inset;
+    box-shadow: $box-shadow;
+    align-items: center;
+    background: rgb(110,144,153);
+    background: linear-gradient(337deg, rgba(110,144,153,1) 8%, rgba(232,232,232,1) 89%);
+
+    p {
+        padding: 1rem 0;
+        margin: 0;
+        text-align: center;
+    }
+}
+ 
 
 
 // Media Queries
@@ -145,19 +322,17 @@ section {
         max-width: 80%;
     }
 
+    // Contact Styling
+
+    .submit-btn {
+        width: 185px;
+    }
+
 }
 
 
 
 @media screen and (min-width: 1024px) {
-
- // Skills List
- .skills-list {
-
-    .skills-item {
-        width: 12.5%;
-    }
-}
 
 
 
