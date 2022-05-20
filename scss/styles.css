@@ -469,6 +469,7 @@ template {
 
 * {
   font-family: "Noto Sans", sans-serif;
+  color: black;
   transition: all 0.3s;
 }
 
@@ -497,10 +498,10 @@ h1 {
 
 .about,
 .skills,
-.projects,
-.contact {
-  padding: 4rem 8%;
+.projects {
+  padding: 4rem 2.3rem;
   border-bottom: #dddddd solid 1px;
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -508,7 +509,7 @@ a {
 }
 
 .header {
-  padding: 8rem 8% 4rem;
+  padding: 8rem 2rem 4rem;
   border-bottom: 1px solid black;
   background: #6e9099;
   background: linear-gradient(163deg, #6e9099 33%, #e8e8e8 89%);
@@ -562,10 +563,12 @@ h3 {
   margin-top: 1.5rem;
 }
 
-.btn-project,
 .modal-btn {
   text-decoration: underline;
-  cursor: pointer;
+}
+
+.btn-project,
+.collapsible-btn {
   text-decoration-thickness: 0.15em;
 }
 
@@ -580,12 +583,23 @@ h3 {
   background-color: rgba(239, 239, 239, 0.5);
 }
 
+.modal-x {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(239, 239, 239, 0.5);
+}
+
 .modal-content {
-  background-color: #d7d7d7;
+  background-color: tomato;
   margin: 15% auto;
   padding: 8%;
   width: 80%;
-  border-radius: 5px;
 }
 
 .close-modal {
@@ -615,23 +629,22 @@ h3 {
   width: auto;
   height: auto;
   border-radius: 15px;
-  padding: 1rem 0;
+  padding-top: 0.5rem;
 }
 
 .card-project {
   margin-bottom: 2rem;
-  padding-bottom: 3rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #dddddd;
 }
 
-.card-project:nth-of-type(5) {
-  border-bottom: none;
+.card-project:last-of-type {
+  border: none;
   padding-bottom: 0;
 }
 
 .project-links {
-  padding: 1rem 0;
-  margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .tech-list-modal {
@@ -653,7 +666,7 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 .skills-list .skills-item {
   align-items: center;
@@ -693,6 +706,9 @@ h3 {
   padding: 0.3rem 1rem;
 }
 
+.contact {
+  padding: 2rem 2rem 4rem;
+}
 .contact p {
   padding-bottom: 1rem;
 }
@@ -710,7 +726,7 @@ h3 {
   height: 40px;
 }
 
-.form {
+.form-contact {
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
@@ -758,25 +774,7 @@ h3 {
   text-align: center;
 }
 
-@media screen and (min-width: 700px) {
-  main,
-.header-content {
-    max-width: 1024px;
-  }
-
-  section,
-.header-content {
-    margin: 0 auto;
-  }
-
-  .header {
-    padding: 10rem 8%;
-  }
-
-  .header-social {
-    max-width: 40%;
-  }
-
+@media screen and (min-width: 600px) {
   .nav {
     justify-content: right;
   }
@@ -785,75 +783,28 @@ h3 {
     margin: 0.4rem;
   }
 
-  .about,
-.skills,
-.projects,
-.contact {
-    padding: 4rem 8%;
-  }
-
   h1 {
     font-size: 4rem;
   }
 
-  .about-text {
-    align-items: center;
-    max-width: 500px;
-    padding-left: 4rem;
-  }
-
-  .skills-list .skills-item {
-    width: 33%;
+  .skills-item {
+    width: 35%;
   }
 
   .main-content {
     margin-top: 6em;
   }
 
+  section {
+    margin: 0 auto 5rem auto;
+  }
+
   .card-text {
     max-width: 80%;
-    padding: 5%;
-  }
-
-  .project-image {
-    max-width: 50%;
-  }
-
-  .card-project {
-    display: flex;
-  }
-
-  .card-project:nth-of-type(even) {
-    flex-direction: row-reverse;
-  }
-
-  .modal-content {
-    max-width: 680px;
-  }
-  .modal-content .project-image {
-    max-width: 100%;
   }
 
   .submit-btn {
     width: 185px;
-  }
-
-  .contact {
-    display: flex;
-    align-items: center;
-  }
-
-  .contact-form {
-    width: 60%;
-  }
-
-  .contact-social {
-    padding: 2rem 0 0 2rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .skills-list .skills-item {
-    width: 25%;
   }
 }
 .main {
