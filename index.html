@@ -12,15 +12,20 @@
 	<body>
 
 		<nav class="nav">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#contact">Contact</a></li>
+			<div id="hamburger" class="hamburger-nav">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<ul id="nav-list" class="nav-list hidden">
+				<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 			</ul>
 		</nav> <!-- /nav -->
 
-		<header class="header">
+		<header id="home" class="header">
 			<div class="header-content">
 				<h1 class="name-heading">Brad Anderson</h1>
 				<p class="tagline">Aspiring Front End Web Developer based out of Melbourne Australia</p>
@@ -94,8 +99,6 @@
 				<div>
 					<h2>projects</h2>
 				</div>
-
-				
 				<div class="card-project">
 					<img class="project-image" src="img/styleguide.PNG" alt="Web Style Guide">	
 					<div class="card-text">
@@ -111,7 +114,18 @@
 					<img class="project-image" src="img/webapp.PNG" alt="WebApp Dashboard">
 					<div class="card-text">
 						<h3>Web App Dashboard</h3>
-						<h4>An interactive web application for displaying data through SVG animations and JavaScript</h4>
+						<h4>An interactive web application for displaying data through SVG animations and JavaScript.</h4>
+						<a class="modal-btn">
+							<p>Find out more</p>
+						</a>
+					</div>
+				</div><!-- /card-project -->
+
+				<div class="card-project">
+					<img class="project-image" src="img/photo-gallery.PNG" alt="Photo Gallery">
+					<div class="card-text">
+						<h3>Interactive Photo Gallery</h3>
+						<h4>An interactive JavaScript photo gallery where users can filter photos using pre-allocated tags.</h4>
 						<a class="modal-btn">
 							<p>Find out more</p>
 						</a>
@@ -122,7 +136,7 @@
 					<img class="project-image" src="img/fetch.PNG" alt="Fetch API">
 					<div class="card-text">
 						<h3>Fetch API Employee Directory</h3>
-						<h4>An application that collects and displays employee data from an external source</h4>
+						<h4>An application that collects and displays employee data from an external source.</h4>
 						<a class="modal-btn">
 							<span>Find out more</span>
 						</a>
@@ -133,7 +147,7 @@
 					<img class="project-image" src="img/wheelofsucess.PNG" alt="WebApp Dashboard">
 					<div class="card-text">
 						<h3>Game Show App</h3>
-						<h4>A browser version of 'Wheel of Sucess' using basic Hangman rules</h4>
+						<h4>A browser version of 'Wheel of Sucess' using basic Hangman rules.</h4>
 						<a class="modal-btn">
 							<span>Find out more</span>
 						</a>
@@ -142,7 +156,7 @@
 
 				<div id="modal" class="modal hidden">
 					<<div class="modal-content">
-						<span class="close-modal">&times</span>
+						<span id="close-modal" class="close-modal">&times</span>
 						<h3>Modular Web Style Guide</h3>
 						<img class="project-image" src="img/styleguide.PNG" alt="Web Style Guide">
 						<p>Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker webpage styling</p>

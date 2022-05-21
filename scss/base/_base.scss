@@ -3,6 +3,7 @@
 * {
     font-family: 'Noto Sans', sans-serif; 
     transition: all .3s;
+    line-height: 1.7;
 }
 
 // Body Styles
@@ -16,17 +17,9 @@ main {
 body {
     background-color: $page-background;
 }
- p {
-     line-height: 1.6;
- }
 
  h1 {
      font-size: 3.5rem;
- }
-
-.about-text,
-.card-text {
-    color: $secondary-text;
 }
 
 .about,
@@ -34,8 +27,7 @@ body {
 .projects,
 .contact {
     padding: 4rem 8%;
-    border-bottom: #dddddd solid 1px;
-    // box-shadow: $box-shadow;
+    border-bottom: $border-bottom;
 }
 
 a {
@@ -43,7 +35,6 @@ a {
 }
 
 // Header Styles
-
 .header {
     padding: 8rem 8% 4rem;
     border-bottom: 1px solid black;
@@ -72,7 +63,6 @@ a {
 
     a {
         display: grid;
-        cursor: pointer;
         place-items: center;
     }
 }
@@ -97,18 +87,15 @@ h3 {
 }
 
 // About Section
-
-
-.about-link {
-    margin-top: 1.5rem;
+.about-text,
+.card-text {
+    color: $secondary-text;
 }
 
 // Main Project Section Styles
-
 .btn-project,
 .modal-btn {
     text-decoration: underline;
-    cursor: pointer;
     text-decoration-thickness: .15em;
 }
 
@@ -129,13 +116,15 @@ h3 {
     padding: 8%;
     width: 80%;
     border-radius: 5px;
+    box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 10%);
 }
 
 .close-modal {
     color: $secondary-text;
     float: right;
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .modal-close:hover {
@@ -167,7 +156,7 @@ h3 {
     border-bottom: 1px solid #dddddd;
 }
 
-.card-project:nth-of-type(5) {
+.card-project:nth-of-type(6) {
     border-bottom: none;
     padding-bottom: 0;
 }
@@ -217,31 +206,68 @@ h3 {
 
 .nav {
     display: flex;
+    justify-content: flex-end;
     width: 100%;
     position: fixed;
     top: 0;
     background-color: $navbar-colour;
-    padding: .3rem;
+    padding: .3em;
+}
 
+.nav-list {
+    position: absolute;
+    top: 30px;
+    background-color: $navbar-colour;
+    width: 100%;
+    transition: .5s;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-decoration: none;
+    list-style-type: none;
+    
     a {
         text-decoration: none;
-        color: $heading-colour;
-    }
-
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: .4rem auto;
-        padding: 0;
-    }
-
-    li {
-        display: block;
-        text-align: center;
-        padding: .3rem 1rem;
+        color: white;
     }
 }
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.hamburger-nav {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    overflow: auto;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: $hamburger-colour;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change {
+    .bar1 {
+        transform: rotate(-45deg) translate(-8px, 6px) ;
+    }
+    .bar2 {
+        opacity: 0;
+    }
+    .bar3 {
+        transform: rotate(45deg) translate(-8px, -7px) ;
+    }
+}
+
 // Contact Styling
 
 .contact {
@@ -257,11 +283,6 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     column-gap: 40px;
-}
-
-.email-svg {
-    width: 40px;
-    height: 40px;
 }
 
 .form {
@@ -281,7 +302,7 @@ h3 {
 }
 
 .form-input {
-    border: #949494 solid 1px;
+    border: $hamburger-colour solid 1px;
     box-shadow: $box-shadow;
     padding: .5rem;
     border-radius: 5px;
@@ -292,14 +313,14 @@ h3 {
 }
 
 .submit-btn {
-    color: #dddddd;
-    background-color: #333333;
+    color: $modal-text;
+    background-color: $heading-colour;
     padding: .5rem;
     width: 100%;
     border-radius: 5px;
 }
-// Footer Styling
 
+// Footer Styling
 .footer { 
     border-top: 1px solid black inset;
     box-shadow: $box-shadow;
@@ -314,16 +335,13 @@ h3 {
     }
 }
  
-
-
 // Media Queries
-
 @media screen and (min-width: 700px) {
     // General
 
     main,
     .header-content {
-        max-width: 1024px;
+        max-width: 1200px;
     }
 
     section,
@@ -340,13 +358,21 @@ h3 {
     }
 
     // Nav
-    .nav {
-        justify-content: right;
+    .hamburger-nav {
+        display: none;
+    }
 
-        ul {
-            padding-right: 1rem;
-            margin: .4rem;
-        }
+    .nav-list {
+        display: flex;
+        justify-content: right;
+        position: static;
+        padding-right: 2rem;
+        margin: .5rem;
+    }
+
+    .nav-item {
+        display: inline;
+        padding: .5rem;
     }
 
     .about,
@@ -357,13 +383,11 @@ h3 {
     }
 
     // Header 
-
     h1 {
         font-size: 4rem;
     }
 
     // About
-
     .about-text {
         align-items: center;
         max-width: 500px;
@@ -409,7 +433,6 @@ h3 {
     }
 
     // Contact Styling
-
     .submit-btn {
         width: 185px;
     }
@@ -424,15 +447,15 @@ h3 {
     }
 
     .contact-social {
-        padding: 2rem 0 0 2rem;
+        padding: 2rem 0 0 3.5rem;
     }
-
 }
+@media screen and (min-width: 1200px) {
+    // Header
 
-
-
-@media screen and (min-width: 1024px) {
-
+    .header-content {
+        padding-left: 10%;
+    }
     // Skills List
     .skills-list {
 
@@ -440,6 +463,4 @@ h3 {
             width: 25%;
         }
     }
-
-
 }

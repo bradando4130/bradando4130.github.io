@@ -1,17 +1,20 @@
 /* -- Modal popup for more additional project info -- */
 
 // Global variables
-let closeModalBtn = document.querySelector(".close-modal");
+let closeModalBtn = document.getElementById("close-modal");
 let modal = document.getElementById("modal");
 let moreInfo = document.querySelectorAll(".modal-btn");
 let currentModalInfo;
+let hamburger = document.getElementById("hamburger");
+let navList = document.getElementById("nav-list");
+let navLink = document.getElementsByClassName("nav-link");
 
 // declare data to pull from in Object 
 let projectData = [
   {
     projectName: "Modular Web Style Guide",
     projectImage: "img/styleguide.PNG",
-    projectDescription: "Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker webpage styling",
+    projectDescription: "Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker and modular webpage styling",
     technologiesUsed: ["SASS", "HTML", "CSS"],
     githubHref: "https://github.com/bradando4130/techdegree-project-4.",
     liveHref: "https://bradando4130.github.io/Techdegree-project-4./"
@@ -19,7 +22,7 @@ let projectData = [
   {
     projectName: "Web App Dashboard",
     projectImage: "img/webapp.PNG",
-    projectDescription: "This web application uses multiple data visualisations to convey user information. Designed to be scalable through different display sizes through use of CSS grid",
+    projectDescription: "This web application uses multiple data visualisations to display detailed user information. Designed to be scalable through different display sizes through use of CSS grid",
     technologiesUsed: ["HTML", "CSS", "SASS", "JavsScript"],
     githubHref: "https://github.com/bradando4130/techdegree-project-7",
     liveHref: "https://bradando4130.github.io/techdegree-project-7/"
@@ -27,7 +30,7 @@ let projectData = [
   {
     projectName: "Fetch API Employee Directory",
     projectImage: "img/fetch.PNG",
-    projectDescription: "Through use of the Fetch API and JavaScript, random employees are selected from a database and displayed on the page",
+    projectDescription: "Through use of the Fetch API and JavaScript, the project acessed the Random User Generator API to dynamically build an employee employee directory. Employees can be filtered through a search bar and acess extra information through a modal display",
     technologiesUsed: ["JavaScript", "SASS", "HTML", "CSS"],
     githubHref: "https://github.com/bradando4130/techdegree-project-8",
     liveHref: "https://bradando4130.github.io/Techdegree-project-8/"
@@ -35,12 +38,19 @@ let projectData = [
   {
     projectName: "Game Show App",
     projectImage: "img/wheelofsucess.PNG",
-    projectDescription: "Using JavaScript to pull a random phrase from a list, the player will then click on letter tiles on the screen to try guess the phrase. results are dynamically displayed on the screen",
+    projectDescription: "Using JavaScript to show a random phrase from a list to the DOM, the player usinng on screen click events ettempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guessess before game over",
     technologiesUsed: ["JavaScript", "HTML", "CSS"],
     githubHref: "https://github.com/bradando4130/techdegree-project-6",
     liveHref: "https://bradando4130.github.io/Techdegree-project-6/"
   },
-
+  {
+    projectName: "Interactive Photo Gallery",
+    projectImage: "img/photo-gallery.PNG",
+    projectDescription: "Photo gallery project where photos are displayed in grid format. Images can be filtered using pre-allocated tags, photos are displayed in a Lightbox display.",
+    technologiesUsed: ["JavaScript", "HTML", "CSS"],
+    githubHref: "https://github.com/bradando4130/techdegree-project-5",
+    liveHref: "https://bradando4130.github.io/techdegree-project-5/"
+  }
 ]
 // close modal if clicking outside the modal-content
 
@@ -54,7 +64,7 @@ window.onclick = (e) => {
 // Open modal and gather project title from page - run getProject()
 moreInfo.forEach(btn => btn.addEventListener("click", (e) => {
   modal.classList.remove("hidden");
-  let currentProject = e.target.closest('.card-project').firstElementChild.innerHTML;
+  let currentProject = e.target.closest('.card-text').firstElementChild.innerHTML;
   getProject(currentProject);
 }))
 
@@ -63,7 +73,7 @@ moreInfo.forEach(btn => btn.addEventListener("click", (e) => {
 function getProject(currentProject) {
   for (let i = 0; i < projectData.length; i++) {
     if (currentProject === projectData[i].projectName) {
-      let currentModalInfo = projectData[i];
+      currentModalInfo = projectData[i];
       buildModal(currentModalInfo);
     } 
   }
@@ -83,7 +93,7 @@ function buildModal(currentModalInfo) {
 
   modalHTML += `
           <div class="modal-content">
-            <span class="close-modal">&times</span>
+            <span id="close-modal" class="close-modal">&times</span>
             <h3>${name}</h3>
             <img class="project-image" src="${img}">
             <p>${desc}</p>
@@ -105,15 +115,37 @@ function buildModal(currentModalInfo) {
         `
 
         modal.innerHTML = modalHTML;
-}
 
-// Close modal
-closeModalBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+        // reset closeModal Btn
+        closeModalBtn = document.getElementById("close-modal");
+        
+        // Close modal when click on x
+        closeModalBtn.addEventListener("click", () => {
+          modal.classList.add("hidden");
+        });
+        }
 
 
 
+// hamburger nav function to toggle to cross and display nav menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle('change');
+  navList.classList.toggle('hidden');
+})
 
+// hide hamburger nav when clicked through a link
+for (let i = 0; i < navLink.length; i++) {
+  navLink[i].addEventListener("click", () => {
+    navList.classList.toggle("hidden");
+    hamburger.classList.toggle('change');
+  })
+} 
 
-
+// onresize to remove class="hidden" from nav
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 700) {
+    navList.classList.remove('hidden');
+  } else {
+    navList.classList.add('hidden');
+  }
+})
