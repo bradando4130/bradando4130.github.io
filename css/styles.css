@@ -576,7 +576,7 @@ h3 {
 .modal-content {
   background-color: whitesmoke;
   margin: 15% auto;
-  padding: 8%;
+  padding: 1.5rem;
   width: 80%;
   border-radius: 5px;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
@@ -871,6 +871,7 @@ h3 {
 
   .modal-content {
     max-width: 680px;
+    padding: 2.5rem;
   }
   .modal-content .project-image {
     max-width: 100%;
