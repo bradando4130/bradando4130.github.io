@@ -475,12 +475,14 @@ template {
 
 main {
   margin: 0 auto;
-  align-items: center;
-  background-color: #efefef;
 }
 
 body {
-  background-color: #efefef;
+  background-color: #fafafa;
+}
+
+p {
+  color: #333333;
 }
 
 h1 {
@@ -504,7 +506,7 @@ a {
   border-bottom: 1px solid black;
   background: #6e9099;
   background: linear-gradient(163deg, #6e9099 33%, #e8e8e8 89%);
-  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 .tagline {
@@ -613,15 +615,14 @@ h3 {
 
 .card-project {
   margin-bottom: 2rem;
-  padding: 1rem 1.3rem 3rem;
+  padding: 1.5rem 2.5rem 4rem;
   background-color: whitesmoke;
   border-bottom: 1px solid #dddddd;
-  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 .card-project:nth-of-type(6) {
   border-bottom: none;
-  padding-bottom: 0;
 }
 
 .project-links {
@@ -755,7 +756,7 @@ h3 {
 
 .form-input {
   border: #949494 solid 1px;
-  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -774,7 +775,7 @@ h3 {
 
 .footer {
   border-top: 1px solid black inset;
-  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
   align-items: center;
   background: #6e9099;
   background: linear-gradient(337deg, #6e9099 8%, #e8e8e8 89%);
