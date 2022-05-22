@@ -810,7 +810,8 @@ h3 {
     justify-content: right;
     position: static;
     padding-right: 2rem;
-    margin: 0.5rem;
+    margin: 0.5rem auto;
+    max-width: 1024px;
   }
 
   .nav-item {
