@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Portfolio - Brad Anderson</title>
@@ -155,8 +155,8 @@
 				</div><!-- /card-project -->
 
 				<div id="modal" class="modal hidden">
-					<<div class="modal-content">
-						<span id="close-modal" class="close-modal">&times</span>
+					<div class="modal-content">
+						<span id="close-modal" class="close-modal">&times;</span>
 						<h3>Modular Web Style Guide</h3>
 						<img class="project-image" src="img/styleguide.PNG" alt="Web Style Guide">
 						<p>Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker webpage styling</p>
@@ -173,7 +173,7 @@
 								<span>View Page in Action</span>
 							</a>
 						</div>
-					</div>>
+					</div>
 				</div>
 			</section>
 
@@ -184,18 +184,18 @@
 						<p>Fill in the form below if you would like to say g'day. Whether that be to request my resume, collaborate together, or simply just to chat!</p>
 					</div>
 					<div class="form">
-						<form action="https://formspree.io/f/meqnvgbv"method="POST">
+						<form action="https://formspree.io/f/meqnvgbv" method="POST">
 							<div class="form-pair">
 								<label class="form-label" for="name">Name</label>
-								<input class="form-input" type="text" name="name" required="true">
+								<input class="form-input" id="name" type="text" name="name" required="required">
 							</div>
 							<div class="form-pair">
 								<label class="form-label" for="email">Email</label>
-								<input class="form-input" type="email" name="email" required="true">
+								<input class="form-input" id="email" type="email" name="email" required="required">
 							</div>
 							<div class="form-pair">
-								<label class="form-label" for="message" name="message">Message</label>
-								<textarea class="form-input" type="textbox" name="message" id="message" required="true"></textarea>
+								<label class="form-label" for="message">Message</label>
+								<textarea class="form-input" name="message" id="message" required="required"></textarea>
 							</div>
 							<button class="submit-btn" type="submit">Send email</button>
 						</form>
@@ -203,7 +203,7 @@
 				</div>
 				
 
-				<div class="contact-social" id="contact">
+				<div class="contact-social">
 					<p>Find me on these social spaces</p>
 					<div class="social-container">
 						<div class="social-item">
@@ -225,8 +225,6 @@
 		<footer class="footer">
 			<p>Designed and coded by Brad Anderson - 2022</p>
 		</footer> <!-- /footer -->
-
+		<script src="js/app.js"></script>
 	</body> <!-- /body -->
-
-	<script src="js/app.js"></script>
 </html>
