@@ -484,7 +484,7 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .about,
@@ -572,7 +572,7 @@ h3 {
 }
 
 .modal-content {
-  background-color: #d7d7d7;
+  background-color: whitesmoke;
   margin: 15% auto;
   padding: 8%;
   width: 80%;
@@ -613,8 +613,10 @@ h3 {
 
 .card-project {
   margin-bottom: 2rem;
-  padding-bottom: 3rem;
+  padding: 1rem 1.3rem 3rem;
+  background-color: whitesmoke;
   border-bottom: 1px solid #dddddd;
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .card-project:nth-of-type(6) {
@@ -623,6 +625,7 @@ h3 {
 }
 
 .project-links {
+  display: flex;
   padding: 1rem 0;
   margin: 0 auto;
 }
@@ -658,7 +661,7 @@ h3 {
 .skill-svg {
   width: 120px;
   height: 120px;
-  fill: black;
+  fill: #111;
 }
 
 .nav {
@@ -667,14 +670,14 @@ h3 {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #4f4e4f;
+  background-color: #111;
   padding: 0.3em;
 }
 
 .nav-list {
   position: absolute;
   top: 30px;
-  background-color: #4f4e4f;
+  background-color: #111;
   width: 100%;
   transition: 0.5s;
 }
@@ -791,6 +794,10 @@ h3 {
   section,
 .header-content {
     margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3.5rem;
   }
 
   .header {
