@@ -38,6 +38,8 @@ p {
 
 a {
     cursor: pointer;
+    color: black;
+    font-weight: 600;
 }
 
 // Header Styles
@@ -173,6 +175,7 @@ h3 {
 
 .project-links {
     display: flex;
+    justify-content: space-around;
     padding: 1rem 0;
     margin: 0 auto;
 }
