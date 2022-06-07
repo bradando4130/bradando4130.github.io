@@ -595,7 +595,7 @@ h3 {
 
 .modal-close:hover {
   cursor: pointer;
-  color: black;
+  color: #111;
   text-decoration: none;
 }
 
