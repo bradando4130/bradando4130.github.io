@@ -14,14 +14,8 @@ main {
 
 body {
     background-color: $page-background;
-    // background-color: rgba(237, 237, 237, 0.44);
-    // opacity: 1;
-    // background-size: 10px 10px;
-    // background-image: repeating-linear-gradient(45deg, rgba(165, 121, 188, 0.09) 0, rgba(165, 121, 188, 0.09) 1px, rgba(237, 237, 237, 0.44) 0, rgba(237, 237, 237, 0.44) 50%);
-}
-
-p {
-    color: $heading-colour
+    color: $primary-text;
+    text-rendering: optimizeLegibility;
 }
 
  h1 {
@@ -38,8 +32,16 @@ p {
 
 a {
     cursor: pointer;
-    color: black;
     font-weight: 600;
+    padding: .1rem;
+    color: $primary-text;
+}
+
+.card-project a:hover,
+.about-text a:hover,
+.project-links a:hover {
+    transition: .5s;
+    color: $secondary-text;
 }
 
 // Header Styles
@@ -98,10 +100,7 @@ h3 {
 
 
 // About Section
-.about-text,
-.card-text {
-    color: $secondary-text;
-}
+
 
 // Main Project Section Styles
 .btn-project,
@@ -131,7 +130,7 @@ h3 {
 }
 
 .close-modal {
-    color: $secondary-text;
+    color: $primary-text;
     float: right;
     font-size: 1.8rem;
     font-weight: bold;
@@ -332,6 +331,21 @@ h3 {
     padding: .5rem;
     width: 100%;
     border-radius: 5px;
+}
+
+.input-error input, 
+.input-error textarea{
+    border-color: $error-colour;
+}
+
+small {
+    padding-top: 0.3rem;
+    color: $error-colour;
+}
+
+.input-sucess input, 
+.input-sucess textarea{
+    border-color: $sucess-colour;
 }
 
 // Footer Styling

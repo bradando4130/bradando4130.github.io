@@ -116,7 +116,7 @@
 						<h3>Web App Dashboard</h3>
 						<h4>An interactive web application for displaying data through SVG animations and JavaScript.</h4>
 						<a class="modal-btn">
-							<p>Find out more</p>
+							<span>Find out more</span>
 						</a>
 					</div>
 				</div><!-- /card-project -->
@@ -127,7 +127,7 @@
 						<h3>Interactive Photo Gallery</h3>
 						<h4>An interactive JavaScript photo gallery where users can filter photos using pre-allocated tags.</h4>
 						<a class="modal-btn">
-							<p>Find out more</p>
+							<span>Find out more</span>
 						</a>
 					</div>
 				</div><!-- /card-project -->
@@ -183,21 +183,24 @@
 						<h2>Contact</h2>
 						<p>Fill in the form below if you would like to say g'day. Whether that be to request my resume, collaborate together, or simply just to chat!</p>
 					</div>
-					<div class="form">
-						<form action="https://formspree.io/f/meqnvgbv" method="POST">
+					<div class="form" name="formspreeForm">
+						<form action="https://formspree.io/f/meqnvgbv" method="POST" id="myForm" novalidate>
 							<div class="form-pair">
 								<label class="form-label" for="name">Name</label>
-								<input class="form-input" id="name" type="text" name="name" required="required">
+								<input class="form-input" id="name" type="text" name="name">
+								<small></small>
 							</div>
 							<div class="form-pair">
 								<label class="form-label" for="email">Email</label>
-								<input class="form-input" id="email" type="email" name="email" required="required">
+								<input class="form-input" id="email" type="email" name="email">
+								<small></small>
 							</div>
 							<div class="form-pair">
 								<label class="form-label" for="message">Message</label>
-								<textarea class="form-input" name="message" id="message" required="required"></textarea>
+								<textarea class="form-input" name="message" id="message"></textarea>
+								<small></small>
 							</div>
-							<button class="submit-btn" type="submit">Send email</button>
+							<button class="submit-btn" type="submit" id="submit">Send email</button>
 						</form>
 					</div>	
 				</div>
