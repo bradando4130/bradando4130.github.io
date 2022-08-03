@@ -51,6 +51,12 @@ a {
     background: rgb(110,144,153);
     background: linear-gradient(163deg, rgba(110,144,153,1) 33%, rgba(232,232,232,1) 89%);
     box-shadow: $box-shadow;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.header-content {
+    z-index: 1;
+    background: transparent;
 }
 
 .tagline {
@@ -86,6 +92,7 @@ h2 {
     color: $heading-colour;
     text-transform: uppercase;
     text-shadow: 2px 2px $secondary-text;
+    z-index: 1;
 }
 
 h2 {
@@ -97,12 +104,99 @@ h3 {
     font-size: 1.3rem;
 }
 
+// Header Hero falling snow effect styles
 
+// function to create random snow sizes - Michael Becker https://codepen.io/mindsculpt - 2022
+@function snow($n) {
+    $value: '#{random(3000)}px #{random(4000)}px #cbccbc';
+    @for $i from 2 through $n {
+        $value: '#{$value}, #{random(3000)}px #{random(4000)}px #cbccbc';
+    }
+    @return unquote($value);
+}
+
+@keyframes snowAnimation {
+    from {
+        transform: translateY(-4000px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+// random snowflake variables
+$snow-sml: snow(600);
+$snow-med: snow(300);
+$snow-lg: snow(100);
+
+.snow {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.snow > .small {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $snow-sml;
+    animation: snowAnimation 45s linear infinite;
+
+    &:after {
+        content: '';
+        top: 4000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: $snow-sml;
+    }
+}
+
+.snow > .med {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $snow-med;
+    animation: snowAnimation 120s linear infinite;
+
+    &:after {
+        content: '';
+        top: 4000px;
+        width: 3px;
+        height: 3px;
+        background: transparent;
+        box-shadow: $snow-med;
+    }
+}
+
+.snow > .large {
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: $snow-lg;
+    animation: snowAnimation 180s linear infinite;
+
+    &:after {
+        content: '';
+        top: 4000px;
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        box-shadow: $snow-lg;
+    }
+}
 
 // About Section
 
 
 // Main Project Section Styles
+
 .btn-project,
 .modal-btn {
     text-decoration: underline;
@@ -127,6 +221,10 @@ h3 {
     width: 80%;
     border-radius: 5px;
     box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 10%);
+}
+
+.modal-content > p {
+        padding: 1.2em;
 }
 
 .close-modal {
@@ -186,11 +284,19 @@ h3 {
 }
 
 .tech-list-modal-item {
-    list-style-type: none;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    p {
+        list-style-type: none;
+    }
+}   
 
-.hidden {
-    display: none;
+
+.modal-tech-image {
+    width: 50px;
+    height: 50px;
 }
 
 // Skills Styles
@@ -218,13 +324,14 @@ h3 {
 // Nav Styles
 
 .nav {
+    position: fixed;
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    position: fixed;
     top: 0;
     background-color: $navbar-colour;
     padding: .3em;
+    z-index: 1;
 }
 
 .nav-list {
@@ -363,16 +470,25 @@ small {
     }
 }
  
+.nav-hide {
+    transform: translateY(-70px);
+}
+
+.hidden { 
+    // class to toggle display on an div
+   display: none;
+}
+
 // Media Queries
 @media screen and (min-width: 700px) {
     // General
     main,
     .header-content {
         max-width: 1200px;
+        margin: 0 auto;
     }
 
-    section,
-    .header-content {
+    section {
         margin: 0 auto;
     }
 

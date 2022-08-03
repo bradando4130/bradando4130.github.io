@@ -2,28 +2,36 @@
 
 // Global variables
 let closeModalBtn = document.getElementById("close-modal");
-let modal = document.getElementById("modal");
-let moreInfo = document.querySelectorAll(".modal-btn");
+const modal = document.getElementById("modal");
+const moreInfo = document.querySelectorAll(".modal-btn");
 let currentModalInfo;
-let hamburger = document.getElementById("hamburger");
-let navList = document.getElementById("nav-list");
-let navLink = document.getElementsByClassName("nav-link");
+const hamburger = document.getElementById("hamburger");
+const navList = document.getElementById("nav-list");
+const navLink = document.getElementsByClassName("nav-link");
 
 // declare data to pull from in Object 
-let projectData = [
+const projectData = [
   {
     projectName: "Modular Web Style Guide",
     projectImage: "img/styleguide.PNG",
     projectDescription: "Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker and modular webpage styling",
     technologiesUsed: ["SASS", "CSS", "HTML"],
+    technologyImages: {
+      image: ['img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
+      alt: ['Sass SVG', 'CSS SVG', 'HTML SVG']
+    },
     githubHref: "https://github.com/bradando4130/techdegree-project-4.",
     liveHref: "https://bradando4130.github.io/Techdegree-project-4./"
   },
   {
     projectName: "Web App Dashboard",
     projectImage: "img/webapp.PNG",
-    projectDescription: "This web application uses multiple data visualisations to display detailed user information. Designed to be scalable through different display sizes through use of CSS grid",
-    technologiesUsed: ["JavsScript", "SASS", "HTML", "CSS", ],
+    projectDescription: "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid",
+    technologiesUsed: ["JavsScript", "SASS", "CSS", "HTML"],
+    technologyImages: {
+      image: ['img/javascript-svgrepo-com.svg', 'img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
+      alt: ['JavaScript SVG', 'Sass SVG', 'CSS SVG', 'HTML SVG']
+    },
     githubHref: "https://github.com/bradando4130/techdegree-project-7",
     liveHref: "https://bradando4130.github.io/techdegree-project-7/"
   },
@@ -32,6 +40,10 @@ let projectData = [
     projectImage: "img/fetch.PNG",
     projectDescription: "Through use of the Fetch API and JavaScript, the project acesses the Random User Generator API to dynamically build an employee employee directory. Employees can be filtered through a search bar and acess extra information through a modal display",
     technologiesUsed: ["JavaScript", "SASS", "CSS", "HTML"],
+    technologyImages: {
+      image: ['img/javascript-svgrepo-com.svg', 'img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
+      alt: ['JavaScript SVG', 'Sass SVG', 'CSS SVG', 'HTML SVG']
+    },
     githubHref: "https://github.com/bradando4130/techdegree-project-8",
     liveHref: "https://bradando4130.github.io/Techdegree-project-8/"
   },
@@ -40,6 +52,10 @@ let projectData = [
     projectImage: "img/wheelofsucess.PNG",
     projectDescription: "Using JavaScript to show a random phrase from a list to the DOM, the player using on screen click events attempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guesses before game over",
     technologiesUsed: ["JavaScript", "CSS", "HTML"],
+    technologyImages: {
+      image: ['img/javascript-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
+      alt: ['JavaScript SVG', 'CSS SVG', 'HTML SVG']
+    },
     githubHref: "https://github.com/bradando4130/techdegree-project-6",
     liveHref: "https://bradando4130.github.io/Techdegree-project-6/"
   },
@@ -48,6 +64,10 @@ let projectData = [
     projectImage: "img/photo-gallery.PNG",
     projectDescription: "Photo gallery project where photos are displayed in grid format. Images can be filtered using pre-allocated tags, photos are displayed in a Lightbox display.",
     technologiesUsed: ["JavaScript", "CSS", "HTML"],
+    technologyImages: {
+      image: ['img/javascript-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
+      alt: ['JavaScript SVG', 'CSS SVG', 'HTML SVG']
+    },
     githubHref: "https://github.com/bradando4130/techdegree-project-5",
     liveHref: "https://bradando4130.github.io/techdegree-project-5/"
   }
@@ -82,12 +102,13 @@ function getProject(currentProject) {
 // function to build modal from data in currentModalInfo vairable
 function buildModal(currentModalInfo) {
   // conccatenate currentModalInfo values into template literal
-  let name = currentModalInfo.projectName;
-  let img = currentModalInfo.projectImage;
-  let desc = currentModalInfo.projectDescription;
-  let tech = currentModalInfo.technologiesUsed;
-  let repo = currentModalInfo.githubHref;
-  let live = currentModalInfo.liveHref;
+  const name = currentModalInfo.projectName;
+  const img = currentModalInfo.projectImage;
+  const desc = currentModalInfo.projectDescription;
+  const tech = currentModalInfo.technologiesUsed;
+  const techImage = currentModalInfo.technologyImages;
+  const repo = currentModalInfo.githubHref;
+  const live = currentModalInfo.liveHref;
 
   let modalHTML = '';
 
@@ -98,9 +119,18 @@ function buildModal(currentModalInfo) {
             <img class="project-image" src="${img}">
             <p>${desc}</p>
             <ul class="tech-list-modal">
-              <li class="tech-list-modal-item">${tech[0]}</li>
-              <li class="tech-list-modal-item">${tech[1]}</li>
-              <li class="tech-list-modal-item">${tech[2]}</li>
+              <li class="tech-list-modal-item">
+                <img class="modal-tech-image" src='${techImage.image[0]}' alt='${techImage.alt[0]}'>
+                <p>${tech[0]}</p>
+              </li>
+              <li class="tech-list-modal-item">
+                <img class="modal-tech-image" src='${techImage.image[1]}' alt='${techImage.alt[1]}'>
+                <p>${tech[1]}</p>
+              </li>
+              <li class="tech-list-modal-item">
+                <img class="modal-tech-image" src='${techImage.image[2]}' alt='${techImage.alt[2]}'>
+                <p>${tech[2]}</p>
+              </li>
             </ul>
             <div class="project-links">
               <a class="btn-project" href="${repo}" target="_blank">
@@ -308,5 +338,44 @@ myForm.addEventListener('input', debounce(function (e) {
   }
 }));
 
+// Hero shadow effect - full credit to WesBos and his JavaScript 30 course
+// for not only teaching me this method, but instilling the importance of 
+// repetition for this never ending learning journey of software delevlopment 
+// I will continue down
+
+const hero = document.querySelector('.header');
+const text = document.querySelector('h1');
+const walk = 12; // 100px
+
+function shadow(e) {
+  const { offsetWidth: width, offsetHeight: height } = hero;
+  let { offsetX: x, offsetY: y } = e;
 
 
+  if (this !== e.target) {
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+  const xWalk = Math.round((x / width * walk) - (walk / 2));
+  const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+  text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 #757575`;
+}
+
+hero.addEventListener('mousemove', shadow);
+
+// hide and show Nav on scroll 
+const nav = document.querySelector('.nav');
+
+let oldOffset = 0;
+let newOffset = 0;
+window.addEventListener('scroll', (e) => {
+  newOffset = window.pageYOffset;
+  if (oldOffset < newOffset) {
+    nav.classList.add('nav-hide');
+  } else {
+    nav.classList.remove('nav-hide');
+  }
+  oldOffset = newOffset;
+});
