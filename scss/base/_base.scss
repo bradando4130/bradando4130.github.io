@@ -99,9 +99,14 @@ h2 {
     font-size: 2.5rem;
 }
 
+.sub-heading-h2 {
+    padding-bottom: 1rem;
+}
+
 h3 {
     color: $navbar-colour;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 // Header Hero falling snow effect styles
@@ -306,7 +311,7 @@ $snow-lg: snow(100);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 1rem;
+    padding-top: 2rem;
 
     .skills-item {
         align-items: center;

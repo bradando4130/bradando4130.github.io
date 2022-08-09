@@ -26,7 +26,7 @@ const projectData = [
   {
     projectName: "Web App Dashboard",
     projectImage: "img/webapp.PNG",
-    projectDescription: "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid",
+    projectDescription: "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid.",
     technologiesUsed: ["JavsScript", "SASS", "CSS", "HTML"],
     technologyImages: {
       image: ['img/javascript-svgrepo-com.svg', 'img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
@@ -38,7 +38,7 @@ const projectData = [
   {
     projectName: "Fetch API Employee Directory",
     projectImage: "img/fetch.PNG",
-    projectDescription: "Through use of the Fetch API and JavaScript, the project acesses the Random User Generator API to dynamically build an employee employee directory. Employees can be filtered through a search bar and acess extra information through a modal display",
+    projectDescription: "Through use of the Fetch API and JavaScript, the project acesses the Random User Generator API to dynamically build an employee employee directory. Employees can be filtered through a search bar and acess extra information through a modal display.",
     technologiesUsed: ["JavaScript", "SASS", "CSS", "HTML"],
     technologyImages: {
       image: ['img/javascript-svgrepo-com.svg', 'img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
@@ -50,7 +50,7 @@ const projectData = [
   {
     projectName: "Game Show App",
     projectImage: "img/wheelofsucess.PNG",
-    projectDescription: "Using JavaScript to show a random phrase from a list to the DOM, the player using on screen click events attempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guesses before game over",
+    projectDescription: "Using JavaScript to show a random phrase from a list to the DOM, the player using on screen click events attempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guesses before game over.",
     technologiesUsed: ["JavaScript", "CSS", "HTML"],
     technologyImages: {
       image: ['img/javascript-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
