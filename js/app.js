@@ -14,7 +14,7 @@ const projectData = [
   {
     projectName: "Modular Web Style Guide",
     projectImage: "img/styleguide.PNG",
-    projectDescription: "Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker and modular webpage styling",
+    projectDescription: "Made using Sass, and modeled after Bootstrap, this style guide is designed to be dropped into projects for quicker and modular webpage styling.",
     technologiesUsed: ["SASS", "CSS", "HTML"],
     technologyImages: {
       image: ['img/sass-svgrepo-com.svg', 'img/css3-svgrepo-com.svg', 'img/html5-svgrepo-com.svg'],
