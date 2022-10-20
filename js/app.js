@@ -15,43 +15,24 @@ const projectData = [
     projectName: "Web App Dashboard",
     projectImage: "img/webapp.PNG",
     projectDescription:
-      "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid.",
-    technologiesUsed: ["JavsScript", "SASS", "CSS", "HTML"],
+      "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid. Project layout and design was derived and matched to pre allocated mockups.",
+    technologiesUsed: ["JavsScript", "SASS", "HTML"],
     technologyImages: {
       image: [
         "img/javascript-svgrepo-com.svg",
         "img/sass-svgrepo-com.svg",
-        "img/css3-svgrepo-com.svg",
         "img/html5-svgrepo-com.svg",
       ],
-      alt: ["JavaScript SVG", "Sass SVG", "CSS SVG", "HTML SVG"],
+      alt: ["JavaScript SVG", "Sass SVG", "HTML SVG"],
     },
     githubHref: "https://github.com/bradando4130/techdegree-project-7",
     liveHref: "https://bradando4130.github.io/techdegree-project-7/",
   },
   {
-    projectName: "Fetch API Employee Directory",
-    projectImage: "img/fetch.PNG",
+    projectName: "Awesome Employee Startup API App",
+    projectImage: "img/apiapp.png",
     projectDescription:
-      "Through use of the Fetch API and JavaScript, the project acesses the Random User Generator API to dynamically build an employee employee directory. Employees can be filtered through a search bar and acess extra information through a modal display.",
-    technologiesUsed: ["JavaScript", "SASS", "CSS", "HTML"],
-    technologyImages: {
-      image: [
-        "img/javascript-svgrepo-com.svg",
-        "img/sass-svgrepo-com.svg",
-        "img/css3-svgrepo-com.svg",
-        "img/html5-svgrepo-com.svg",
-      ],
-      alt: ["JavaScript SVG", "Sass SVG", "CSS SVG", "HTML SVG"],
-    },
-    githubHref: "https://github.com/bradando4130/techdegree-project-8",
-    liveHref: "https://bradando4130.github.io/Techdegree-project-8/",
-  },
-  {
-    projectName: "Game Show App",
-    projectImage: "img/wheelofsucess.PNG",
-    projectDescription:
-      "Using JavaScript to show a random phrase from a list to the DOM, the player using on screen click events attempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guesses before game over.",
+      "App for a fictional startup compant to view employee contact details. Built with JavaScript, this app will fetch random employee data from Random User Generator API and display to page. Employees can be filtered by name via a search bar input. Employees can also be clicked on for a modal popup to display extra information, from this modal they can be toggled between using click buttons and keyboard arrow input.",
     technologiesUsed: ["JavaScript", "CSS", "HTML"],
     technologyImages: {
       image: [
@@ -61,14 +42,14 @@ const projectData = [
       ],
       alt: ["JavaScript SVG", "CSS SVG", "HTML SVG"],
     },
-    githubHref: "https://github.com/bradando4130/techdegree-project-6",
-    liveHref: "https://bradando4130.github.io/Techdegree-project-6/",
+    githubHref: "https://github.com/bradando4130/awesome-startup-api-app",
+    liveHref: "https://bradando4130.github.io/awesome-startup-api-app/",
   },
   {
-    projectName: "Interactive Photo Gallery",
-    projectImage: "img/photo-gallery.PNG",
+    projectName: "OOP Game Show App",
+    projectImage: "img/phrasehunter.png",
     projectDescription:
-      "Photo gallery project where photos are displayed in grid format. Images can be filtered using pre-allocated tags, photos are displayed in a Lightbox display.",
+      "Using Object Oriented JavaScript to show a random phrase from a list to the DOM, the player using on screen click events attempts to solve the phrase. Results are dynamically displayed on the screen. Player is allowed five incorrect guesses before game over.",
     technologiesUsed: ["JavaScript", "CSS", "HTML"],
     technologyImages: {
       image: [
@@ -78,8 +59,25 @@ const projectData = [
       ],
       alt: ["JavaScript SVG", "CSS SVG", "HTML SVG"],
     },
-    githubHref: "https://github.com/bradando4130/techdegree-project-5",
-    liveHref: "https://bradando4130.github.io/techdegree-project-5/",
+    githubHref: "https://github.com/bradando4130/OOP-Game-Show-App",
+    liveHref: "https://bradando4130.github.io/OOP-Game-Show-App/",
+  },
+  {
+    projectName: "Interactive Form Validation",
+    projectImage: "img/formvalidation.png",
+    projectDescription:
+      "Custom interactive JavaScript form validation for a fictional event sign-up page. Regular Expressions used to validate certain fields, along with enabling of sub fields based on selections of main fields. Featuring helpful conditional error messages on invalid submits, along with disabling of events if time schedule conflicts arise.",
+    technologiesUsed: ["JavaScript", "CSS", "HTML"],
+    technologyImages: {
+      image: [
+        "img/javascript-svgrepo-com.svg",
+        "img/css3-svgrepo-com.svg",
+        "img/html5-svgrepo-com.svg",
+      ],
+      alt: ["JavaScript SVG", "CSS SVG", "HTML SVG"],
+    },
+    githubHref: "https://github.com/bradando4130/Interactive-Form-Validation",
+    liveHref: "https://bradando4130.github.io/Interactive-Form-Validation/",
   },
 ];
 // close modal if clicking outside the modal-content

@@ -1,132 +1,136 @@
 // Font Style
 
 * {
-    font-family: 'Noto Sans', sans-serif; 
-    transition: all .3s;
-    line-height: 1.7;
+  font-family: "Noto Sans", sans-serif;
+  transition: all 0.3s;
+  line-height: 1.7;
 }
 
 // Body Styles
 
 main {
-   margin: 0 auto;
+  margin: 0 auto;
 }
 
 body {
-    background-color: $page-background;
-    color: $primary-text;
-    text-rendering: optimizeLegibility;
+  background-color: $page-background;
+  color: $primary-text;
+  text-rendering: optimizeLegibility;
 }
 
- h1 {
-     font-size: 3rem;
+h1 {
+  font-size: 3rem;
 }
 
 .about,
 .skills,
 .projects,
 .contact {
-    padding: 4rem 8%;
-    border-bottom: $border-bottom;
+  padding: 4rem 8%;
+  border-bottom: $border-bottom;
 }
 
 a {
-    cursor: pointer;
-    font-weight: 600;
-    padding: .1rem;
-    color: $primary-text;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.1rem;
+  color: $primary-text;
 }
 
-.card-project a:hover,
-.about-text a:hover,
-.project-links a:hover {
-    transition: .5s;
-    color: $secondary-text;
+a:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: $secondary-text;
 }
 
 // Header Styles
 .header {
-    padding: 8rem 8% 4rem;
-    border-bottom: 1px solid black;
-    background: rgb(110,144,153);
-    background: linear-gradient(163deg, rgba(110,144,153,1) 33%, rgba(232,232,232,1) 89%);
-    box-shadow: $box-shadow;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  padding: 8rem 8% 4rem;
+  border-bottom: 1px solid black;
+  background: rgb(110, 144, 153);
+  background: linear-gradient(
+    163deg,
+    rgba(110, 144, 153, 1) 33%,
+    rgba(232, 232, 232, 1) 89%
+  );
+  box-shadow: $box-shadow;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .header-content {
-    z-index: 1;
-    background: transparent;
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
 
 .tagline {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .header-social {
-    display: inline-grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 60%;
-    column-gap: 40px;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 60%;
+  column-gap: 40px;
 }
 
 .social-item {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    border-top: 1px solid black;
-    padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  border-top: 1px solid black;
+  padding-top: 1rem;
 
-    a {
-        display: grid;
-        place-items: center;
-    }
+  a {
+    display: grid;
+    place-items: center;
+  }
 }
 
 .social-item:nth-child(2) {
-    grid-column-start: 2;
+  grid-column-start: 2;
 }
 
-h1, 
+h1,
 h2 {
-    color: $heading-colour;
-    text-transform: uppercase;
-    text-shadow: 2px 2px $secondary-text;
-    z-index: 1;
+  color: $heading-colour;
+  text-transform: uppercase;
+  text-shadow: 2px 2px $secondary-text;
+  z-index: 1;
 }
 
 h2 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .sub-heading-h2 {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
-    color: $navbar-colour;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  color: $navbar-colour;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 // Header Hero falling snow effect styles
 
 // function to create random snow sizes - Michael Becker https://codepen.io/mindsculpt - 2022
 @function snow($n) {
-    $value: '#{random(3000)}px #{random(4000)}px #cbccbc';
-    @for $i from 2 through $n {
-        $value: '#{$value}, #{random(3000)}px #{random(4000)}px #cbccbc';
-    }
-    @return unquote($value);
+  $value: "#{random(3000)}px #{random(4000)}px #cbccbc";
+  @for $i from 2 through $n {
+    $value: "#{$value}, #{random(3000)}px #{random(4000)}px #cbccbc";
+  }
+  @return unquote($value);
 }
 
 @keyframes snowAnimation {
-    from {
-        transform: translateY(-4000px);
-    }
-    to {
-        transform: translateY(0px);
-    }
+  from {
+    transform: translateY(-4000px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 // random snowflake variables
@@ -135,119 +139,117 @@ $snow-med: snow(300);
 $snow-lg: snow(100);
 
 .snow {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 1s ease-in-out;
-    overflow: hidden;
-    z-index: 0;
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .snow > .small {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $snow-sml;
+  animation: snowAnimation 45s linear infinite;
+
+  &:after {
+    content: "";
+    top: 4000px;
     width: 1px;
     height: 1px;
     background: transparent;
     box-shadow: $snow-sml;
-    animation: snowAnimation 45s linear infinite;
-
-    &:after {
-        content: '';
-        top: 4000px;
-        width: 1px;
-        height: 1px;
-        background: transparent;
-        box-shadow: $snow-sml;
-    }
+  }
 }
 
 .snow > .med {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $snow-med;
+  animation: snowAnimation 120s linear infinite;
+
+  &:after {
+    content: "";
+    top: 4000px;
     width: 3px;
     height: 3px;
     background: transparent;
     box-shadow: $snow-med;
-    animation: snowAnimation 120s linear infinite;
-
-    &:after {
-        content: '';
-        top: 4000px;
-        width: 3px;
-        height: 3px;
-        background: transparent;
-        box-shadow: $snow-med;
-    }
+  }
 }
 
 .snow > .large {
-    width: 4px;
-    height: 4px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: $snow-lg;
-    animation: snowAnimation 180s linear infinite;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: $snow-lg;
+  animation: snowAnimation 180s linear infinite;
 
-    &:after {
-        content: '';
-        top: 4000px;
-        width: 5px;
-        height: 5px;
-        background: transparent;
-        box-shadow: $snow-lg;
-    }
+  &:after {
+    content: "";
+    top: 4000px;
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    box-shadow: $snow-lg;
+  }
 }
 
 // About Section
-
 
 // Main Project Section Styles
 
 .btn-project,
 .modal-btn {
-    text-decoration: underline;
-    text-decoration-thickness: .15em;
+  text-decoration: underline;
+  text-decoration-thickness: 0.15em;
 }
 
 .modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: $modal-colour;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $modal-colour;
 }
 
 .modal-content {
-    background-color: $card;
-    margin: 15% auto;
-    padding: 1.5rem;
-    width: 80%;
-    border-radius: 5px;
-    box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 10%);
+  background-color: $card;
+  margin: 15% auto;
+  padding: 1.5rem;
+  width: 80%;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 30%);
 }
 
 .modal-content > p {
-        padding: 1.2em;
+  padding: 1.2em;
 }
 
 .close-modal {
-    color: $primary-text;
-    float: right;
-    font-size: 1.8rem;
-    font-weight: bold;
-    cursor: pointer;
+  color: $primary-text;
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .modal-close:hover {
-    cursor: pointer;
-    color: #111;
-    text-decoration: none;
+  color: #111;
+  text-decoration: none;
 }
 
 .btn-project:nth-child(1) {
-    margin-right: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .card-text {
@@ -256,367 +258,365 @@ $snow-lg: snow(100);
 }
 
 .project-image {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    border-radius: 15px;
-    padding: 1rem 0;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding: 1rem 0;
 }
 
 .card-project {
-    margin-bottom: 2rem;
-    padding: 1.5rem 2.5rem 4rem;
-    background-color: $card;
-    border-bottom: 1px solid #dddddd;
-    box-shadow: $box-shadow;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2.5rem 4rem;
+  background-color: $card;
+  border-bottom: 1px solid #dddddd;
+  box-shadow: $box-shadow;
 }
 
 .card-project:nth-of-type(6) {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .project-links {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  margin: 0 auto;
 }
 
 .tech-list-modal {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
 }
 
 .tech-list-modal-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-    p {
-        list-style-type: none;
-    }
-}   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  p {
+    list-style-type: none;
+  }
+}
 
 .modal-tech-image {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 // Skills Styles
 
 .skills-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 2rem;
 
-    .skills-item {
-        align-items: center;
-        text-align: center;
-        list-style-type: none;
-        width: 45%;
-    }
+  .skills-item {
+    align-items: center;
+    text-align: center;
+    list-style-type: none;
+    width: 45%;
+  }
 }
 
 .skill-svg {
-    width: 120px;
-    height: 120px;
-    fill: $navbar-colour;
+  width: 120px;
+  height: 120px;
+  fill: $navbar-colour;
 }
 // Nav Styles
 
 .nav {
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    top: 0;
-    background-color: $navbar-colour;
-    padding: .3em;
-    z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  top: 0;
+  background-color: $navbar-colour;
+  padding: 0.3em;
+  z-index: 1;
 }
 
 .nav-list {
-    position: absolute;
-    top: 30px;
-    background-color: $navbar-colour;
-    width: 100%;
-    transition: .5s;
+  position: absolute;
+  top: 30px;
+  background-color: $navbar-colour;
+  width: 100%;
+  transition: 0.5s;
 }
 
 .nav-item {
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  text-decoration: none;
+  list-style-type: none;
+
+  a {
     text-decoration: none;
-    list-style-type: none;
-    
-    a {
-        text-decoration: none;
-        color: white;
-    }
+    color: white;
+  }
 }
 
 .nav-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .hamburger-nav {
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 1.5rem;
-    overflow: auto;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1.5rem;
+  overflow: auto;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-    width: 30px;
-    height: 4px;
-    background-color: $hamburger-colour;
-    margin: 6px 0;
-    transition: 0.4s;
+  width: 30px;
+  height: 4px;
+  background-color: $hamburger-colour;
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .change {
-    .bar1 {
-        transform: rotate(-45deg) translate(-8px, 6px) ;
-    }
-    .bar2 {
-        opacity: 0;
-    }
-    .bar3 {
-        transform: rotate(45deg) translate(-8px, -7px) ;
-    }
+  .bar1 {
+    transform: rotate(-45deg) translate(-8px, 6px);
+  }
+  .bar2 {
+    opacity: 0;
+  }
+  .bar3 {
+    transform: rotate(45deg) translate(-8px, -7px);
+  }
 }
 
 // Contact Styling
 
 .contact {
-
-    p {
-        padding-bottom: 1rem;
-    }
+  p {
+    padding-bottom: 1rem;
+  }
 }
 
 .social-container {
-    margin: 0 auto;
-    display: inline-grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    column-gap: 40px;
+  margin: 0 auto;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  column-gap: 40px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
 }
 
 .form-pair {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
 }
 
-.form-label{
-    padding-bottom: .5rem;
+.form-label {
+  padding-bottom: 0.5rem;
 }
 
 .form-input {
-    border: $hamburger-colour solid 1px;
-    box-shadow: $box-shadow;
-    padding: .5rem;
-    border-radius: 5px;
+  border: $hamburger-colour solid 1px;
+  box-shadow: $box-shadow;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 #message {
-    height: 154px;
+  height: 154px;
 }
 
 .submit-btn {
-    color: $modal-text;
-    background-color: $heading-colour;
-    padding: .5rem;
-    width: 100%;
-    border-radius: 5px;
+  color: $modal-text;
+  background-color: $heading-colour;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.input-error input, 
-.input-error textarea{
-    border-color: $error-colour;
+.input-error input,
+.input-error textarea {
+  border-color: $error-colour;
 }
 
 small {
-    padding-top: 0.3rem;
-    color: $error-colour;
+  padding-top: 0.3rem;
+  color: $error-colour;
 }
 
-.input-sucess input, 
-.input-sucess textarea{
-    border-color: $sucess-colour;
+.input-sucess input,
+.input-sucess textarea {
+  border-color: $sucess-colour;
 }
 
 // Footer Styling
-.footer { 
-    border-top: 1px solid black inset;
-    box-shadow: $box-shadow;
-    align-items: center;
-    background: rgb(110,144,153);
-    background: linear-gradient(337deg, rgba(110,144,153,1) 8%, rgba(232,232,232,1) 89%);
+.footer {
+  border-top: 1px solid black inset;
+  box-shadow: $box-shadow;
+  align-items: center;
+  background: rgb(110, 144, 153);
+  background: linear-gradient(
+    337deg,
+    rgba(110, 144, 153, 1) 8%,
+    rgba(232, 232, 232, 1) 89%
+  );
 
-    p {
-        padding: 1rem 0;
-        margin: 0;
-        text-align: center;
-    }
+  p {
+    padding: 1rem 0;
+    margin: 0;
+    text-align: center;
+  }
 }
- 
+
 .nav-hide {
-    transform: translateY(-70px);
+  transform: translateY(-70px);
 }
 
-.hidden { 
-    // class to toggle display on an div
-   display: none;
+.hidden {
+  // class to toggle display on an div
+  display: none;
 }
 
 // Media Queries
 @media screen and (min-width: 700px) {
-    // General
-    main,
-    .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  // General
+  main,
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    section {
-        margin: 0 auto;
-    }
+  section {
+    margin: 0 auto;
+  }
 
-    
-    // Header
-    h1 {
-        font-size: 3.5rem;
-    }
-    .header {
-        padding: 10rem 8%;
-    }
+  // Header
+  h1 {
+    font-size: 3.5rem;
+  }
+  .header {
+    padding: 10rem 8%;
+  }
 
-    .header-social {
-        max-width: 40%;
+  .header-social {
+    max-width: 40%;
+  }
+
+  // Nav
+  .hamburger-nav {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: right;
+    position: static;
+    padding-right: 2rem;
+    margin: 0.5rem auto;
+    max-width: 1024px;
+  }
+
+  .nav-item {
+    display: inline;
+    padding: 0.5rem;
+  }
+
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    padding: 4rem 8%;
+  }
+
+  // Header
+  h1 {
+    font-size: 4rem;
+  }
+
+  // About
+  .about-text {
+    align-items: center;
+    max-width: 500px;
+    padding-left: 4rem;
+  }
+
+  // Skills List
+  .skills-list {
+    .skills-item {
+      width: 33%;
     }
+  }
 
+  // Main Article Section Styles
+  .main-content {
+    margin-top: 6em;
+  }
 
-    // Nav
-    .hamburger-nav {
-        display: none;
-    }
+  .card-text {
+    max-width: 80%;
+    padding: 5%;
+  }
 
-    .nav-list {
-        display: flex;
-        justify-content: right;
-        position: static;
-        padding-right: 2rem;
-        margin: .5rem auto;
-        max-width: 1024px;
-    }
+  .project-image {
+    max-width: 50%;
+  }
 
-    .nav-item {
-        display: inline;
-        padding: .5rem;
-    }
+  .card-project {
+    display: flex;
+  }
 
-    .about,
-    .skills,
-    .projects,
-    .contact {
-        padding: 4rem 8%;
-    }
+  .card-project:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
 
-    // Header 
-    h1 {
-        font-size: 4rem;
-    }
-
-    // About
-    .about-text {
-        align-items: center;
-        max-width: 500px;
-        padding-left: 4rem;
-    }
-
-    // Skills List
-    .skills-list {
-
-        .skills-item {
-            width: 33%;
-        }
-    }
-
-    // Main Article Section Styles
-    .main-content {
-        margin-top: 6em;
-    }
-
-    .card-text {
-        max-width: 80%;
-        padding: 5%;
-    }
+  .modal-content {
+    max-width: 680px;
+    padding: 2.5rem;
 
     .project-image {
-        max-width: 50%;
+      max-width: 100%;
     }
+  }
 
-    .card-project {
-        display: flex;
-    }
+  // Contact Styling
+  .submit-btn {
+    width: 185px;
+  }
 
-    .card-project:nth-of-type(even) {
-        flex-direction: row-reverse;
-    }
+  .contact {
+    display: flex;
+    align-items: center;
+  }
 
-    .modal-content {
-        max-width: 680px;
-        padding: 2.5rem;
+  .contact-form {
+    width: 60%;
+  }
 
-        .project-image {
-            max-width: 100%;
-        }
-    }
-
-    // Contact Styling
-    .submit-btn {
-        width: 185px;
-    }
-
-    .contact {
-        display: flex;
-        align-items: center;
-    }
-
-    .contact-form {
-        width: 60%;
-    }
-
-    .contact-social {
-        padding: 2rem 0 0 3.5rem;
-    }
+  .contact-social {
+    padding: 2rem 0 0 3.5rem;
+  }
 }
 @media screen and (min-width: 1200px) {
-    // Header
+  // Header
 
-    .header-content {
-        padding-left: 15%;
+  .header-content {
+    padding-left: 15%;
+  }
+  // Skills List
+  .skills-list {
+    .skills-item {
+      width: 25%;
     }
-    // Skills List
-    .skills-list {
-
-        .skills-item {
-            width: 25%;
-        }
-    }
+  }
 }
