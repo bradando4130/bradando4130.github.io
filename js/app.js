@@ -13,7 +13,7 @@ const navLink = document.getElementsByClassName("nav-link");
 const projectData = [
   {
     projectName: "Web App Dashboard",
-    projectImage: "img/webapp.PNG",
+    projectImage: "img/webapp1.PNG",
     projectDescription:
       "This web application uses multiple data visualisations to display detailed user information. Graphs displayed through use of Chart.js plugin, and can be dynamically changed through different datasets. Designed to be scalable through different display sizes through use of CSS grid. Project layout and design was derived and matched to pre allocated mockups.",
     technologiesUsed: ["JavsScript", "SASS", "HTML"],
